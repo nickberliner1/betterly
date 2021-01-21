@@ -17,8 +17,15 @@ export default class EditCvForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
+			signedIn: false
 		};
+		this.handleSignIn = this.handleSignIn.bind(this);
+	}
+
+	handleSignIn() {
+		this.setState(prevState => ({
+			signedIn: !prevState.signedIn
+		}))
 	}
 
 	render() {
@@ -26,6 +33,9 @@ export default class EditCvForm extends React.Component {
 			
 			<div className="form">
 				<div className="arrow-up"></div>
+
+				{!this.state.signedIn ?  
+
 				<div className="form-container">
 					<Form 
 						// onSubmit={handleSubmit}
@@ -34,7 +44,7 @@ export default class EditCvForm extends React.Component {
 							<Form.Control
 								autoFocus
 								placeholder="Email or Username"
-								type="email"
+								type=""
 								// value={email}
 							/>
 						</Form.Group>
@@ -45,11 +55,34 @@ export default class EditCvForm extends React.Component {
 								// value={password}
 							/>
 						</Form.Group> 
-						<Button block size="lg" type="submit">
-						Sign in
-						</Button>
+						<Button 
+							block size="lg" 
+							// type="submit"
+							onClick={this.handleSignIn}
+						>Sign in</Button>
 					</Form>
 				</div>
+
+				:
+
+				<div className="form-container">
+					<Form>
+						<Form.Group size="lg" controlId="name">
+							<Form.Control 
+								autoFocus
+								autoCapitalize
+								placeholder="Enter the Name"
+							/>
+						</Form.Group>
+						<Button
+							block size="lg"
+							onClick={this.props.onLoginOpen}
+						>Save</Button>
+					</Form>
+				</div>
+
+				}
+
 			</div>
 		);
 	}

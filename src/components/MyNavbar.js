@@ -1,8 +1,9 @@
 import React from 'react';
 import EditCvForm from './EditCvForm';
+import Logo from './Logo';
 
 import { Transition } from 'react-transition-group';
-import { Button, Navbar } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 const duration = 120;
 
@@ -32,6 +33,7 @@ export default function MyNavbar(){
                 sticky="top"
             > */}
             <div className="my-navbar">
+                {/* <Logo /> */}
                 <Button 
                     onClick={onLoginOpen}
                     className="login-button"
@@ -50,7 +52,9 @@ export default function MyNavbar(){
                                 ...defaultStyle, 
                                 ...transitionStyles[showLogin]
                             }}>
-                            <EditCvForm />
+                            <EditCvForm
+                                onLoginOpen={onLoginOpen}
+                            />
                         </div> 
                         
                     )}
