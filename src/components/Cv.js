@@ -16,12 +16,8 @@ export default class Cv extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="cv-container">
                 <h1>{this.state.name}</h1>
-                <input 
-                    placeholder="Enter Name"
-                    onChange={this.handleInput}
-                />
             </div>
         )
     }
