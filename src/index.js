@@ -4,7 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Boostrap css file
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+// CSS files to not be overridden by Bootstrap
+import './App.css';
+import './components/styles/navbar.css';
+import './components/styles/cv.css';
+import './components/styles/edit-cv-form.css';
 
 ReactDOM.render(
   <React.StrictMode>

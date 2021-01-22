@@ -1,6 +1,5 @@
 import React from 'react';
 import EditCvForm from './EditCvForm';
-import Logo from './Logo';
 
 import { Transition } from 'react-transition-group';
 import Button from 'react-bootstrap/Button';
@@ -28,15 +27,13 @@ export default function MyNavbar(props){
     return (
         <div>
             <div className="my-navbar">
-                {/* <Logo /> */}
                 <Button 
                     onClick={onLoginOpen}
                     className="login-button"
                 >
-                    Login
+                Edit CV
                 </Button>
             </div>
-            {/* </Navbar> */}
 
             <div className="login-form-area">
                 <Transition in={showLogin} timeout={duration}>
@@ -49,7 +46,7 @@ export default function MyNavbar(props){
                             }}>
                             <EditCvForm
                                 onLoginOpen={onLoginOpen}
-                                handleInput={props.handleInput}
+                                handleNameInput={props.handleNameInput}
                             />
                         </div> 
                         
