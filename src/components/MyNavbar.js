@@ -21,17 +21,12 @@ const transitionStyles = {
   exited:  { opacity: 0 },
 };
 
-export default function MyNavbar(){
+export default function MyNavbar(props){
     const [showLogin, setShowLogin] = React.useState(false);
     const onLoginOpen = () => setShowLogin(!showLogin);
 
     return (
         <div>
-            {/* <Navbar  
-                collapseOnSelect
-                className="my-navbar"
-                sticky="top"
-            > */}
             <div className="my-navbar">
                 {/* <Logo /> */}
                 <Button 
@@ -54,6 +49,7 @@ export default function MyNavbar(){
                             }}>
                             <EditCvForm
                                 onLoginOpen={onLoginOpen}
+                                handleInput={props.handleInput}
                             />
                         </div> 
                         

@@ -1,17 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
-// const [email, setEmail] = useState("");
-// 	const [password, setPassword] = useState("");
-
-// 	function validateForm() {
-// 		return email.length > 0 && password.length > 0;
-// 	}
-
-// 	function handleSubmit(event) {
-// 		event.preventDefault();
-// 	}
 
 export default class EditCvForm extends React.Component {
 	constructor(props) {
@@ -37,27 +26,22 @@ export default class EditCvForm extends React.Component {
 				{!this.state.signedIn ?  
 
 				<div className="form-container">
-					<Form 
-						// onSubmit={handleSubmit}
-					>
+					<Form>
 						<Form.Group size="lg" controlId="email">
 							<Form.Control
 								autoFocus
 								placeholder="Email or Username"
 								type=""
-								// value={email}
 							/>
 						</Form.Group>
 						<Form.Group size="lg" controlId="password">
 							<Form.Control
 								placeholder="Password"
 								type="password"
-								// value={password}
 							/>
 						</Form.Group> 
 						<Button 
 							block size="lg" 
-							// type="submit"
 							onClick={this.handleSignIn}
 						>Sign in</Button>
 					</Form>
@@ -72,6 +56,7 @@ export default class EditCvForm extends React.Component {
 								autoFocus
 								autoCapitalize
 								placeholder="Enter the Name"
+								onChange={this.props.handleInput}
 							/>
 						</Form.Group>
 						<Button
