@@ -1,4 +1,5 @@
 import React from 'react';
+import ListItem from './ListItem';
 
 export default class Cv extends React.Component {
     constructor(props) {
@@ -17,7 +18,15 @@ export default class Cv extends React.Component {
                 <div className="cv-body">
                     <section className="experience">
                         <h4>Experience</h4>
-                        <p></p>
+                        <ul>
+                        {
+                        this.props.experience.map((experience, index) => {
+                            return (
+                                <ListItem key={index} value={experience} />
+                            );
+                        })
+                        }
+                        </ul>
                     </section>
                     <section className="skills">
                         <h4>Skills</h4>

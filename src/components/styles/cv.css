@@ -35,3 +35,7 @@
     flex: 1 1 40%;
     margin: 1em;
 }
+
+.cv-body section p {
+    word-wrap: break-word;
+}

@@ -7,13 +7,31 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			name: 'Nick Berliner'
+			name: 'Nick Berliner',
+			experience: [
+							`Freelance Front-End Developer`,
+							`Intern Developer`,
+							`Brand Specialist`
+						]
 		}
 	}
 
     handleNameInput = (e) => {
         this.setState({
             name: e.target.value
+        })
+	}
+	
+	handleExperienceInput = (index, e) => {
+		// Make a copy of experience
+		let experience = this.state.experience.slice();
+		
+		// Update with modified input
+		experience[index] = e.target.value;
+
+		// Update state
+        this.setState({
+            experience: experience
         })
     }
 
@@ -22,9 +40,11 @@ export default class App extends React.Component {
 			<div className="App">
 				<MyNavbar
 					handleNameInput={this.handleNameInput}
+					handleExperienceInput={this.handleExperienceInput}
 				/>
 				<Cv
 					name={this.state.name}
+					experience={this.state.experience}
 				/>
 			</div>
 		)

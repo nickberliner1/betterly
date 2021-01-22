@@ -68,6 +68,11 @@ export default class EditCvForm extends React.Component {
 								onChange={this.props.handleNameInput}
 								placeholder="Name"
 							></Form.Control>
+							<Form.Control 
+								autoFocus
+								onChange={this.props.handleExperienceInput}
+								placeholder="Experience"
+							></Form.Control>
 						</Form.Group>
 						<Button
 							block size="lg"
