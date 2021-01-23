@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { getQueriesForElement } from "@testing-library/react";
 
 export default class EditCvForm extends React.Component {
 	constructor(props) {
@@ -19,6 +20,12 @@ export default class EditCvForm extends React.Component {
 			email: "",
 			password: ""
 		}))
+		let getForm = document.getElementsByName("login-form");
+		getForm[0].reset();
+	}
+
+	handleSubmit = (e) => {
+		e.preventDefault()
 	}
 
 	render() {
@@ -33,7 +40,10 @@ export default class EditCvForm extends React.Component {
 
 				// Form for if the user is not logged in yet (no validation)
 				<div className="form-container">
-					<Form>
+					<Form 
+						name="login-form" 
+						onSubmit={this.handleSubmit}
+					>
 						<Form.Group size="lg" controlId="email">
 							<Form.Control
 								autoFocus
@@ -61,18 +71,20 @@ export default class EditCvForm extends React.Component {
 				
 				// For for editing the CV after the user logged in 
 				<div className="form-container">
-					<Form>
+					<Form 
+						onSubmit={this.handleSubmit}
+					>
 						<Form.Group size="lg" controlId="name">
 							<Form.Control 
 								autoFocus
 								onChange={this.props.handleNameInput}
 								placeholder="Name"
 							></Form.Control>
-							<Form.Control 
-								autoFocus
-								onChange={this.props.handleExperienceInput}
+							<textarea
 								placeholder="Experience"
-							></Form.Control>
+								// value={this.props.experience[0]}
+								// onChange={(e) => this.props.handleExperienceInput(e)}
+							></textarea>
 						</Form.Group>
 						<Button
 							block size="lg"

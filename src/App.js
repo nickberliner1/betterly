@@ -24,14 +24,14 @@ export default class App extends React.Component {
 	
 	handleExperienceInput = (index, e) => {
 		// Make a copy of experience
-		let experience = this.state.experience.slice();
+		let updatedExperience = [...this.state.experience];
 		
 		// Update with modified input
-		experience[index] = e.target.value;
+		updatedExperience[index] = e.target.value;
 
 		// Update state
         this.setState({
-            experience: experience
+            experience: updatedExperience
         })
     }
 
