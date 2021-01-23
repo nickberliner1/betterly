@@ -1,8 +1,6 @@
 .cv-container {
     width: 50vw;
     margin-left: 10vw;
-    border: 2px solid rgb(29, 29, 29);
-    border-radius: 10px;
 }
 
 .cv-header {
@@ -22,6 +20,8 @@
     padding: 10px;
     flex-wrap: wrap;
     flex: 1 1 30%;
+    border: 2px solid rgb(29, 29, 29);
+    border-radius: 10px;
 }
 
 .cv-body h4 {

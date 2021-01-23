@@ -7,6 +7,7 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			isLoggedIn: false,
 			name: 'Nick Berliner',
 			experience: [
 							`Freelance Front-End Developer`,
@@ -14,6 +15,17 @@ export default class App extends React.Component {
 							`Brand Specialist`
 						]
 		}
+		this.handleLogin = this.handleLogin.bind(this);
+	}
+
+	handleLogin() {
+		this.setState(prevState => ({
+			isLoggedIn: !prevState.isLoggedIn,
+			email: "",
+			password: ""
+		}))
+		let getForm = document.getElementsByName("login-form");
+		getForm[0].reset();
 	}
 
     handleNameInput = (e) => {
@@ -41,10 +53,13 @@ export default class App extends React.Component {
 				<MyNavbar
 					handleNameInput={this.handleNameInput}
 					handleExperienceInput={this.handleExperienceInput}
+					isLoggedIn={this.state.isLoggedIn}
+					handleLogin={this.handleLogin}
 				/>
 				<Cv
 					name={this.state.name}
 					experience={this.state.experience}
+					isLoggedIn={this.state.isLoggedIn}
 				/>
 			</div>
 		)

@@ -7,22 +7,22 @@ export default class EditCvForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loggedIn: false,
+			// loggedIn: false,
 			email: '',
 			password: ''
 		};
-		this.handleLogin = this.handleLogin.bind(this);
+		// this.handleLogin = this.handleLogin.bind(this);
 	}
 
-	handleLogin() {
-		this.setState(prevState => ({
-			loggedIn: !prevState.loggedIn,
-			email: "",
-			password: ""
-		}))
-		let getForm = document.getElementsByName("login-form");
-		getForm[0].reset();
-	}
+	// handleLogin() {
+	// 	this.setState(prevState => ({
+	// 		loggedIn: !prevState.loggedIn,
+	// 		email: "",
+	// 		password: ""
+	// 	}))
+	// 	let getForm = document.getElementsByName("login-form");
+	// 	getForm[0].reset();
+	// }
 
 	handleSubmit = (e) => {
 		e.preventDefault()
@@ -34,7 +34,7 @@ export default class EditCvForm extends React.Component {
 			<div className="form">
 				<div className="arrow-up"></div>
 
-				{!this.state.loggedIn 
+				{!this.props.isLoggedIn 
 				
 				? 
 
@@ -61,7 +61,7 @@ export default class EditCvForm extends React.Component {
 						<Button 
 							type="reset"
 							block size="lg" 
-							onClick={this.handleLogin}
+							onClick={this.props.handleLogin}
 							className="login-button"
 						>Sign in</Button>
 					</Form>
