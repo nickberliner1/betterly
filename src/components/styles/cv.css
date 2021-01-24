@@ -9,9 +9,16 @@
     background-color: #1d1d1d;
 }
 
-.cv-header h1 {
-    padding: 20px;
+.cv-header h1, h4 {
     color: white;
+}
+
+.cv-header h1 {
+    padding-top: 10px;
+}
+
+.cv-header h4 {
+    padding-bottom: 10px;
 }
 
 .cv-body {
@@ -24,7 +31,7 @@
     border-radius: 10px;
 }
 
-.cv-body h4 {
+.cv-body h5 {
     padding: 15px;
     border-radius: 10px;
     background-color: #1d1d1d;

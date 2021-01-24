@@ -14,31 +14,29 @@ export default class Cv extends React.Component {
             <div className="cv-container">
                 <div className="cv-header">
                     <h1>{this.props.name}</h1>
+                    <h4>{this.props.title}</h4>
                 </div>
                 <div className="cv-body">
                     <section className="experience">
-                        <h4>Experience</h4>
+                        <h5>Experience</h5>
                         <ul>
                             <Experience 
                                 experience={this.props.experience}
+                                onChange={this.props.newInput}
+                                handleGeneralInput={this.props.handleGeneralInput}
+                                handleAddExperience={this.props.handleAddExperience}
+                                handleDeleteExperience={this.props.handleDeleteExperience}
                             />
-                        {/* {
-                        this.props.experience.map((experience, index) => {
-                            return (
-                                <ListItem key={index} value={experience} />
-                            );
-                        })
-                        } */}
                         </ul>
                     </section>
                     <section className="skills">
-                        <h4>Skills</h4>
+                        <h5>Skills</h5>
                     </section>
                     <section className="education">
-                        <h4>Education</h4>
+                        <h5>Education</h5>
                     </section>
                     <section className="contact">
-                        <h4>Contact Info</h4>
+                        <h5>Contact Info</h5>
                     </section>
                 </div>
             </div>

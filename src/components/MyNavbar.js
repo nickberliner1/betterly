@@ -46,9 +46,10 @@ export default function MyNavbar(props){
                             }}>
                             <EditCvForm
                                 onLoginOpen={onLoginOpen}
-                                handleNameInput={props.handleNameInput}
                                 isLoggedIn={props.isLoggedIn}
-					            handleLogin={props.handleLogin}
+                                handleLogin={props.handleLogin}
+                                handleNameInput={props.handleNameInput}
+                                handleTitleInput={props.handleTitleInput}
                             />
                         </div> 
                         
