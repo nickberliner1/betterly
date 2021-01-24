@@ -12,10 +12,24 @@ export default class App extends React.Component {
 			name: 'Nick Berliner',
 			title: 'Front-End Developer',
 			experience: [
-							`Freelance Front-End Developer`,
-							`Intern Developer`,
-							`Brand Specialist`
-						]
+				`Freelance Front-End Developer`,
+				`Intern Developer`,
+				`Brand Specialist`
+			],
+			skills: [
+				`HTML/CSS`,
+				`JavaScript`,
+				`React`,
+				`Vue`
+			],
+			education: [
+				`University of Milan`,
+				`OpenClassrooms`
+			],
+			contact: [
+				`+39 347 031 7404`,
+				`nickberliner1@gmail.com`
+			]
 		}
 		this.handleLogin = this.handleLogin.bind(this);
 	}
@@ -48,7 +62,7 @@ export default class App extends React.Component {
 		})
 	}
 
-	handleAddExperience = (e) => {
+	handleAddExperience = () => {
 		this.setState({
 			experience: [...this.state.experience, this.state.newInput],
 		})
@@ -58,6 +72,45 @@ export default class App extends React.Component {
 		this.state.experience.splice(key, 1);
 		this.setState({
 			experience: this.state.experience
+		})
+	}
+
+	handleAddSkills = () => {
+		this.setState({
+			skills: [...this.state.skills, this.state.newInput],
+		})
+	}
+
+	handleDeleteSkills = (key) => {
+		this.state.skills.splice(key, 1);
+		this.setState({
+			skills: this.state.skills
+		})
+	}
+
+	handleAddEducation = () => {
+		this.setState({
+			education: [...this.state.education, this.state.newInput],
+		})
+	}
+
+	handleDeleteEducation = (key) => {
+		this.state.education.splice(key, 1);
+		this.setState({
+			education: this.state.education
+		})
+	}
+
+	handleAddContact = () => {
+		this.setState({
+			contact: [...this.state.contact, this.state.newInput],
+		})
+	}
+
+	handleDeleteContact = (key) => {
+		this.state.contact.splice(key, 1);
+		this.setState({
+			contact: this.state.contact
 		})
 	}
 
@@ -74,11 +127,20 @@ export default class App extends React.Component {
 					name={this.state.name}
 					title={this.state.title}
 					experience={this.state.experience}
+					skills={this.state.skills}
+					contact={this.state.contact}
+					education={this.state.education}
 					isLoggedIn={this.state.isLoggedIn}
 					newInput={this.state.newInput}
 					handleGeneralInput={this.handleGeneralInput}
 					handleAddExperience={this.handleAddExperience}
 					handleDeleteExperience={this.handleDeleteExperience}
+					handleAddEducation={this.handleAddEducation}
+					handleDeleteEducation={this.handleDeleteEducation}
+					handleAddSkills={this.handleAddSkills}
+					handleDeleteSkills={this.handleDeleteSkills}
+					handleAddContact={this.handleAddContact}
+					handleDeleteContact={this.handleDeleteContact}
 				/>
 			</div>
 		)

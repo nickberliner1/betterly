@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ListItem from './ListItem';
 import Button from 'react-bootstrap/Button';
 
-const Experience = (props) => {
+const Education = (props) => {
     const [edit, setEdit] = useState(false);
 
     const handleEdit = () => {
@@ -12,29 +12,29 @@ const Experience = (props) => {
     return (
         <div>
             {
-                props.experience &&
-                props.experience.map((experience, index) => {
+                props.education &&
+                props.education.map((education, index) => {
                     return (
                         <>
                             <ListItem 
                                 key={index} 
-                                value={experience}
+                                value={education}
                             />
                             {edit ? 
                             <Button onClick={() => {
-                                props.handleDeleteExperience(index)
+                                props.handleDeleteEducation(index)
                             }}>Delete</Button>
                             : null }
                         </>
                     )
                 })
             }
-            <Button onClick={handleEdit}>{edit ? 'Done' : 'Add Experience'}</Button>
+            <Button onClick={handleEdit}>{edit ? 'Done' : 'Add Education'}</Button>
             {edit ? 
             <>
-                <Button onClick={props.handleAddExperience}>Save</Button>
+                <Button onClick={props.handleAddEducation}>Save</Button>
                 <input
-                    name="add-experience"
+                    name="add-education"
                     type="text"
                     value={props.newInput}
                     onChange={props.handleGeneralInput}
@@ -46,4 +46,4 @@ const Experience = (props) => {
     )
 };
 
-export default Experience;
+export default Education;
