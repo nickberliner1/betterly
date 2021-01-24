@@ -31,7 +31,7 @@ export default function MyNavbar(props){
                     onClick={onLoginOpen}
                     className="login-button"
                 >
-                Edit CV
+                {!props.isLoggedIn ? 'Log In' : 'Edit CV'}
                 </Button>
             </div>
 

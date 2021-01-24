@@ -20,45 +20,49 @@ export default class Cv extends React.Component {
                     <h4>{this.props.title}</h4>
                 </div>
                 <div className="cv-body">
-                    <section className="experience">
+                    <section>
                         <h5>Experience</h5>
-                            <Experience 
-                                experience={this.props.experience}
-                                onChange={this.props.newInput}
-                                handleGeneralInput={this.props.handleGeneralInput}
-                                handleAddExperience={this.props.handleAddExperience}
-                                handleDeleteExperience={this.props.handleDeleteExperience}
-                            />
+                        <Experience 
+                            className="category"
+                            experience={this.props.experience}
+                            onChange={this.props.newInput}
+                            handleGeneralInput={this.props.handleGeneralInput}
+                            handleAddExperience={this.props.handleAddExperience}
+                            handleDeleteExperience={this.props.handleDeleteExperience}
+                        />
                     </section>
-                    <section className="skills">
+                    <section>
                         <h5>Skills</h5>
-                            <Skills 
-                                skills={this.props.skills}
-                                onChange={this.props.newInput}
-                                handleGeneralInput={this.props.handleGeneralInput}
-                                handleAddSkills={this.props.handleAddSkills}
-                                handleDeleteSkills={this.props.handleDeleteSkills}
-                            />
+                        <Skills 
+                            className="category"
+                            skills={this.props.skills}
+                            onChange={this.props.newInput}
+                            handleGeneralInput={this.props.handleGeneralInput}
+                            handleAddSkills={this.props.handleAddSkills}
+                            handleDeleteSkills={this.props.handleDeleteSkills}
+                        />
                     </section>
-                    <section className="education">
+                    <section>
                         <h5>Education</h5>
-                            <Education
-                                education={this.props.education}
-                                onChange={this.props.newInput}
-                                handleGeneralInput={this.props.handleGeneralInput}
-                                handleAddEducation={this.props.handleAddEducation}
-                                handleDeleteEducation={this.props.handleDeleteEducation}
-                            />
+                        <Education
+                            className="category"
+                            education={this.props.education}
+                            onChange={this.props.newInput}
+                            handleGeneralInput={this.props.handleGeneralInput}
+                            handleAddEducation={this.props.handleAddEducation}
+                            handleDeleteEducation={this.props.handleDeleteEducation}
+                        />
                     </section>
-                    <section className="contact">
+                    <section>
                         <h5>Contact Info</h5>
-                            <Contact 
-                                contact={this.props.contact}
-                                onChange={this.props.newInput}
-                                handleGeneralInput={this.props.handleGeneralInput}
-                                handleAddContact={this.props.handleAddContact}
-                                handleDeleteContact={this.props.handleDeleteContact}
-                            />
+                        <Contact 
+                            className="category"
+                            contact={this.props.contact}
+                            onChange={this.props.newInput}
+                            handleGeneralInput={this.props.handleGeneralInput}
+                            handleAddContact={this.props.handleAddContact}
+                            handleDeleteContact={this.props.handleDeleteContact}
+                        />
                     </section>
                 </div>
             </div>

@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import ListItem from './ListItem';
-import Button from 'react-bootstrap/Button';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faTrash, faCheck } from '@fortawesome/free-solid-svg-icons'
+import Form from 'react-bootstrap/Form';
 
 const Experience = (props) => {
     const [edit, setEdit] = useState(false);
 
-    const handleEdit = () => {
-        setEdit(!edit);
+    const openEdit = () => {
+        setEdit(true);
+    }
+
+    const closeEdit = () => {
+        setEdit(false);
     }
 
     return (
@@ -15,33 +22,57 @@ const Experience = (props) => {
                 props.experience &&
                 props.experience.map((experience, index) => {
                     return (
-                        <>
+                        <div 
+                            className="item"
+                            onClick={openEdit}
+                        >
                             <ListItem 
                                 key={index} 
                                 value={experience}
                             />
                             {edit ? 
-                            <Button onClick={() => {
-                                props.handleDeleteExperience(index)
-                            }}>Delete</Button>
+                                <FontAwesomeIcon 
+                                    icon={faTrash} 
+                                    onClick={() => {
+                                        props.handleDeleteExperience(index)
+                                    }}
+                                    style={{cursor: 'pointer', color: '#ad0000'}} // Red
+                                />
+                            // </Button>
                             : null }
-                        </>
+                        </div>
                     )
                 })
             }
-            <Button onClick={handleEdit}>{edit ? 'Done' : 'Add Experience'}</Button>
-            {edit ? 
-            <>
-                <Button onClick={props.handleAddExperience}>Save</Button>
-                <input
-                    name="add-experience"
-                    type="text"
-                    value={props.newInput}
-                    onChange={props.handleGeneralInput}
-                    placeholder="Add a new role"
-                /> 
-            </>
-            : null}
+            <div>
+                {edit ? 
+                <>
+                    <div className="edit-options">
+                    <FontAwesomeIcon 
+                        icon={faCheck} 
+                        onClick={closeEdit}
+                        style={{cursor: 'pointer', color: '#00ab2b'}} // Green
+                    />
+                    <div style={{margin: '1.5em'}}></div>
+                    <FontAwesomeIcon 
+                        icon={faPlus} 
+                        onClick={props.handleAddExperience}
+                        style={{cursor: 'pointer', color: '#0043de'}} // Blue
+                    />
+                    </div>
+                    <Form.Control
+                        autoFocus
+                        name="add-items"
+                        type="text"
+                        value={props.newInput}
+                        onChange={props.handleGeneralInput}
+                        placeholder="Add a new role"
+                    ></Form.Control>
+                </>
+                : 
+                null
+                }
+            </div>
         </div>
     )
 };

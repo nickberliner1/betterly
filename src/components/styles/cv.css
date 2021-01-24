@@ -31,6 +31,10 @@
     border-radius: 10px;
 }
 
+section {
+    display: inline;
+}
+
 .cv-body h5 {
     padding: 15px;
     border-radius: 10px;

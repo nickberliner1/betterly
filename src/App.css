@@ -1,7 +1,18 @@
 .App {
-  text-align: center;
-  width: auto;
-  height: 100vh;
-  background-color: rgb(235, 235, 235);
+	text-align: center;
+	width: auto;
+	height: 100vh;
+	background-color: rgb(235, 235, 235);
 }
 
+.item {
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.edit-options {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
