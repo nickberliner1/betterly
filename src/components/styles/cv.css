@@ -6,11 +6,12 @@
 .cv-header {
     border-radius: 10px;
     border: 2px solid black;
-    /* background-color: #1d1d1d; */
+    background-color: #1d1d1d;
+    margin-bottom: 10px;
 }
 
 .cv-header h1, h4 {
-    color: white;
+    color: white;  
 }
 
 .cv-header h1 {
@@ -29,6 +30,7 @@
     flex: 1 1 30%;
     border: 2px solid rgb(29, 29, 29);
     border-radius: 10px;
+    background-color: white;
 }
 
 section {
@@ -38,7 +40,7 @@ section {
 .cv-body h5 {
     padding: 15px;
     border-radius: 10px;
-    /* background-color: #1d1d1d; */
+    background-color: #1d1d1d;
     color: white;
 }
 

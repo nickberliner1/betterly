@@ -8,7 +8,7 @@ export default class App extends React.Component {
 		super(props);
 		this.state = {
 			isLoggedIn: false,
-			color: ``,
+			color: 'blue',
 			newInput: '',
 			name: 'Nick Berliner',
 			title: 'Front-End Developer',
