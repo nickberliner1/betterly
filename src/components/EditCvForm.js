@@ -9,13 +9,22 @@ export default class EditCvForm extends React.Component {
 		super(props);
 		this.state = {
 			email: '',
-			password: ''
+			password: '',
+			// color: {
+			// 	hex: `#fffff`,
+			// }
 		};
 	}
 
 	handleSubmit = (e) => {
 		e.preventDefault()
 	}
+
+	// handleColorChange = (color) => {
+	// 	this.setState({
+	// 		color: color.hex
+	// 	})
+	// }
 
 	render() {
 		return (
@@ -79,7 +88,7 @@ export default class EditCvForm extends React.Component {
 						<hr />
 						<h5>Change Background Color</h5>
 						<CirclePicker 
-							color={this.state.color} 
+							color={this.props.color} 
 							onChange={this.props.handleColorChange}
 						/>
 						<hr />

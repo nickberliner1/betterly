@@ -46,7 +46,7 @@ export default function MyNavbar(props){
                             }}>
                             <EditCvForm
                                 color={props.color}
-                                handleColorchange={props.handleColorchange}
+                                handleColorChange={props.handleColorChange}
                                 onLoginOpen={onLoginOpen}
                                 isLoggedIn={props.isLoggedIn}
                                 handleLogin={props.handleLogin}

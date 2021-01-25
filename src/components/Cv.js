@@ -20,7 +20,7 @@ export default class Cv extends React.Component {
             >
                 <div 
                     className="cv-header"
-                    style={{backgroundColor: `${this.props.color}`}}
+                    style={{backgroundColor: `${this.props.color.hex}`}}
                 >
                     <h1>{this.props.name}</h1>
                     <h4>{this.props.title}</h4>
@@ -28,7 +28,7 @@ export default class Cv extends React.Component {
                 <div className="cv-body">
                     <section>
                         <h5
-                            style={{backgroundColor: `${this.props.color}`}}
+                            style={{backgroundColor: `${this.props.color.hex}`}}
                         >Experience</h5>
                         <Experience 
                             className="category"
@@ -41,7 +41,7 @@ export default class Cv extends React.Component {
                     </section>
                     <section>
                         <h5
-                            style={{backgroundColor: `${this.props.color}`}}
+                            style={{backgroundColor: `${this.props.color.hex}`}}
                         >Skills</h5>
                         <Skills 
                             className="category"
@@ -54,7 +54,7 @@ export default class Cv extends React.Component {
                     </section>
                     <section>
                         <h5
-                            style={{backgroundColor: `${this.props.color}`}}
+                            style={{backgroundColor: `${this.props.color.hex}`}}
                         >Education</h5>
                         <Education
                             className="category"
@@ -67,7 +67,7 @@ export default class Cv extends React.Component {
                     </section>
                     <section>
                         <h5
-                            style={{backgroundColor: `${this.props.color}`}}
+                            style={{backgroundColor: `${this.props.color.hex}`}}
                         >Contact Info</h5>
                         <Contact 
                             className="category"

@@ -44,7 +44,7 @@ export default class App extends React.Component {
 
 	handleColorChange = (color) => {
 		this.setState({
-			color: color.hex
+			color: color
 		})
 	}
 
@@ -124,7 +124,7 @@ export default class App extends React.Component {
 				<MyNavbar
 					isLoggedIn={this.state.isLoggedIn}
 					color={this.state.color}
-					handleColorChange={this.handleColorChange}
+					handleColorChange={(e) => this.handleColorChange(e)}
 					handleLogin={this.handleLogin}
 					handleNameInput={this.handleNameInput}
 					handleTitleInput={this.handleTitleInput}
