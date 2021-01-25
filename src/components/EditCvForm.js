@@ -57,7 +57,6 @@ export default class EditCvForm extends React.Component {
 							/>
 						</Form.Group> 
 						<Button 
-							type="reset"
 							block size="lg" 
 							onClick={this.props.handleLogin}
 						>Sign in</Button>

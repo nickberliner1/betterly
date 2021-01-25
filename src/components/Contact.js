@@ -62,7 +62,7 @@ const Contact = (props) => {
                     </div>
                     <Form.Control
                         autoFocus
-                        name="add-items"
+                        id="add-items"
                         type="text"
                         value={props.newInput}
                         onChange={props.handleGeneralInput}
