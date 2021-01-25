@@ -8,6 +8,7 @@ export default class App extends React.Component {
 		super(props);
 		this.state = {
 			isLoggedIn: false,
+			color: ``,
 			newInput: '',
 			name: 'Nick Berliner',
 			title: 'Front-End Developer',
@@ -37,17 +38,20 @@ export default class App extends React.Component {
 	handleLogin() {
 		this.setState(prevState => ({
 			isLoggedIn: !prevState.isLoggedIn,
-			email: "",
-			password: ""
-		}))
-		let getForm = document.getElementsByName("login-form");
-		getForm[0].reset();
+		}));
+		document.getElementById("navbar-form").reset();
+	}
+
+	handleColorChange = (color) => {
+		this.setState({
+			color: color.hex
+		})
 	}
 
     handleNameInput = (e) => {
         this.setState({
             name: e.target.value
-        })
+		})
 	}
 
 	handleTitleInput = (e) => {
@@ -119,11 +123,15 @@ export default class App extends React.Component {
 			<div className="App">
 				<MyNavbar
 					isLoggedIn={this.state.isLoggedIn}
+					color={this.state.color}
+					handleColorChange={this.handleColorChange}
 					handleLogin={this.handleLogin}
 					handleNameInput={this.handleNameInput}
 					handleTitleInput={this.handleTitleInput}
 				/>
 				<Cv
+					color={this.state.color}
+					handleColorChange={this.handleColorChange}
 					name={this.state.name}
 					title={this.state.title}
 					experience={this.state.experience}

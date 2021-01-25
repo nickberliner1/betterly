@@ -45,6 +45,8 @@ export default function MyNavbar(props){
                                 ...transitionStyles[showLogin]
                             }}>
                             <EditCvForm
+                                color={props.color}
+                                handleColorchange={props.handleColorchange}
                                 onLoginOpen={onLoginOpen}
                                 isLoggedIn={props.isLoggedIn}
                                 handleLogin={props.handleLogin}

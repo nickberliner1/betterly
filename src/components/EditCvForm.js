@@ -1,4 +1,6 @@
 import React from "react";
+
+import { CirclePicker } from 'react-color';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -28,7 +30,7 @@ export default class EditCvForm extends React.Component {
 				// Form for if the user is not logged in yet (no validation)
 				<div className="form-container">
 					<Form 
-						name="login-form" 
+						id="navbar-form" 
 						onSubmit={this.handleSubmit}
 					>
 						<Form.Group size="lg" controlId="email">
@@ -49,7 +51,6 @@ export default class EditCvForm extends React.Component {
 							type="reset"
 							block size="lg" 
 							onClick={this.props.handleLogin}
-							className="login-button"
 						>Sign in</Button>
 					</Form>
 				</div>
@@ -59,6 +60,7 @@ export default class EditCvForm extends React.Component {
 				// For for editing the CV after the user logged in 
 				<div className="form-container">
 					<Form 
+						id="navbar-form"
 						onSubmit={this.handleSubmit}
 					>
 						<Form.Group size="lg" controlId="name">
@@ -67,18 +69,30 @@ export default class EditCvForm extends React.Component {
 								onChange={this.props.handleNameInput}
 								placeholder="Name"
 							></Form.Control>
+							<hr />
 							<Form.Control 
 								autoFocus
 								onChange={this.props.handleTitleInput}
 								placeholder="Title"
 							></Form.Control>
 						</Form.Group>
+						<hr />
+						<h5>Change Background Color</h5>
+						<CirclePicker 
+							color={this.state.color} 
+							onChange={this.props.handleColorChange}
+						/>
+						<hr />
 						<Button
 							block size="lg"
 							type="submit"
 							onClick={this.props.onLoginOpen}
-							className="login-button"
 						>Save</Button>
+						<Button
+							block size="lg"
+							type="submit"
+							onClick={this.props.handleLogin}
+						>Logout</Button>
 					</Form>
 				</div>
 

@@ -38,7 +38,6 @@ const Education = (props) => {
                                     }}
                                     style={{cursor: 'pointer', color: '#ad0000'}} // Red
                                 />
-                            // </Button>
                             : null }
                         </div>
                     )
@@ -66,7 +65,7 @@ const Education = (props) => {
                         type="text"
                         value={props.newInput}
                         onChange={props.handleGeneralInput}
-                        placeholder="Add a new role"
+                        placeholder="Add Education"
                     ></Form.Control>
                 </>
                 : 

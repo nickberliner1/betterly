@@ -66,7 +66,7 @@ const Skills = (props) => {
                         type="text"
                         value={props.newInput}
                         onChange={props.handleGeneralInput}
-                        placeholder="Add a new role"
+                        placeholder="Add Skills"
                     ></Form.Control>
                 </>
                 : 

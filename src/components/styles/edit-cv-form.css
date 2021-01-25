@@ -18,6 +18,10 @@
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-bottom: 15px solid #34479d;
-
     margin-right: 2.5em;
+}
+
+.form-container h5 {
+    padding-top: 1em;
+    padding-bottom: 1em;
 }

@@ -8,20 +8,28 @@ export default class Cv extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            
+			
         }
     }
 
     render() {
         return (
-            <div className="cv-container">
-                <div className="cv-header">
+            <div 
+                className="cv-container"
+                style={!this.props.isLoggedIn ? {pointerEvents: 'none'} : null}
+            >
+                <div 
+                    className="cv-header"
+                    style={{backgroundColor: `${this.props.color}`}}
+                >
                     <h1>{this.props.name}</h1>
                     <h4>{this.props.title}</h4>
                 </div>
                 <div className="cv-body">
                     <section>
-                        <h5>Experience</h5>
+                        <h5
+                            style={{backgroundColor: `${this.props.color}`}}
+                        >Experience</h5>
                         <Experience 
                             className="category"
                             experience={this.props.experience}
@@ -32,7 +40,9 @@ export default class Cv extends React.Component {
                         />
                     </section>
                     <section>
-                        <h5>Skills</h5>
+                        <h5
+                            style={{backgroundColor: `${this.props.color}`}}
+                        >Skills</h5>
                         <Skills 
                             className="category"
                             skills={this.props.skills}
@@ -43,7 +53,9 @@ export default class Cv extends React.Component {
                         />
                     </section>
                     <section>
-                        <h5>Education</h5>
+                        <h5
+                            style={{backgroundColor: `${this.props.color}`}}
+                        >Education</h5>
                         <Education
                             className="category"
                             education={this.props.education}
@@ -54,7 +66,9 @@ export default class Cv extends React.Component {
                         />
                     </section>
                     <section>
-                        <h5>Contact Info</h5>
+                        <h5
+                            style={{backgroundColor: `${this.props.color}`}}
+                        >Contact Info</h5>
                         <Contact 
                             className="category"
                             contact={this.props.contact}

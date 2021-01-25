@@ -66,7 +66,7 @@ const Experience = (props) => {
                         type="text"
                         value={props.newInput}
                         onChange={props.handleGeneralInput}
-                        placeholder="Add a new role"
+                        placeholder="Add Experience"
                     ></Form.Control>
                 </>
                 : 
